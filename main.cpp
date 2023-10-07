@@ -2,7 +2,7 @@
 int main() {
     // Initialize a window
     int width{900}, height{600};
-    InitWindow(width, height, "Chase Game");
+    InitWindow(width, height, "Modified Chase Game");
 
     // Circle Coordinates
     int circle_x{450}, circle_y{300}, circle_radius{25};
