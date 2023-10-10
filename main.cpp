@@ -1,18 +1,14 @@
 #include "raylib.h"
 
 int main() {
-    // Determin the Game Window Width and Height
-    const int screenWidth = 800;
-    const int screenHeight = 500;
+    // Determine the Game Window Width and Height
+    
 
     // Initialize the Window
-    InitWindow(screenWidth, screenHeight, "My not very fun Game");
+    InitWindow(800, 600, "Variables");
     
-    int myInteger = 5;
-    float myFloat = 3.14f;
-    bool isProgrammingFun = true;
-    char myCharacter = 'a';
-    double myDouble = 2.7;
+    const int screenwidth = GetScreenWidth ();
+    const int screenheight = GetScreenHeight ();
 
     // Setting the Frames Per Second
     SetTargetFPS(60);
@@ -25,11 +21,8 @@ int main() {
         // Clear canvas to a specific color to avoid flicker
         ClearBackground(RAYWHITE);
 
-        DrawText ("Hello, Raylib", 10,20,20,BLUE);
-        DrawText(TextFormat("Integer Value: %d", myInteger), 10,40,20,BLACK);
-        DrawText(TextFormat("Float Value: %f", myFloat), 10,60,20,BLACK);
-        DrawText(TextFormat("Double Value: %f", myDouble), 10,80,20,BLACK);
-        DrawText(TextFormat("Character Value: %c", myCharacter), 10,100,20,BLACK);
+        DrawText(TextFormat("Screen Width: %d", screenwidth), 10, 10, 30, BLACK);
+        DrawText(TextFormat("Screen Height: %d", screenheight), 10, 40, 30, BLACK);
 
         // Here goes all the Game Logic
 
