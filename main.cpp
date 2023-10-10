@@ -2,8 +2,8 @@
 
 int main() {
     // Determin the Game Window Width and Height
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 100;
+    const int screenHeight = 150;
 
     // Initialize the Window
     InitWindow(screenWidth, screenHeight, "My Game");
