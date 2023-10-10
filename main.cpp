@@ -5,11 +5,11 @@ int main() {
     
 
     // Initialize the Window
-    InitWindow(800, 600, "Variables");
-    
-    const int screenwidth = GetScreenWidth ();
-    const int screenheight = GetScreenHeight ();
+    const int screenwidth = 800;
+    const int screenheight = 600;
 
+    InitWindow(screenwidth, screenheight, "Basic Drawing Screen");
+    
     // Setting the Frames Per Second
     SetTargetFPS(60);
 
@@ -21,9 +21,10 @@ int main() {
         // Clear canvas to a specific color to avoid flicker
         ClearBackground(RAYWHITE);
 
-        DrawText(TextFormat("Screen Width: %d", screenwidth), 10, 10, 30, BLACK);
-        DrawText(TextFormat("Screen Height: %d", screenheight), 10, 40, 30, BLACK);
-
+        DrawRectangle (10, 10, 20, 40, GREEN);
+        DrawCircle (450, 450, 200, BLUE);
+        DrawLine (10, 10, 600, 600, RED);
+        
         // Here goes all the Game Logic
 
         // teardown Canvas
