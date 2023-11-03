@@ -1,37 +1,54 @@
 #include "raylib.h"
 
-int main() {
-    // Determine the Game Window Width and Height
-    
+int main()
+{
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    const int screenWidth = 800;
+    const int screenHeight = 600;
 
-    // Initialize the Window
-    const int screenwidth = 800;
-    const int screenheight = 600;
+    InitWindow(screenWidth, screenHeight, "Raylib Texture Loading Example");
 
-    InitWindow(screenwidth, screenheight, "Basic Drawing Screen");
-    
-    // Setting the Frames Per Second
-    SetTargetFPS(60);
+    Texture2D marioTexture = LoadTexture("Resources/Textures/mario.png");
 
-    // The Game Loop
-    while (!WindowShouldClose() /*WindowShouldClose returns true if esc is clicked and closes the window*/) {
+    Vector2 scale = {0.5f/0.5f};
 
-        // Setup Canvas
+    float rotation = 0.0f;
+    Color tint = WHITE;
+
+    Vector2 position = {(screenWidth - (marioTexture.width* scale.x))/2, (screenHeight- (marioTexture.height * scale.y))/2};
+
+    SetTargetFPS(60);               // Set the desired frames-per-second target
+
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+
+        // TODO: Update your variables here
+
+        //----------------------------------------------------------------------------------
+
+        // Draw
+        //----------------------------------------------------------------------------------
         BeginDrawing();
-        // Clear canvas to a specific color to avoid flicker
-        ClearBackground(RAYWHITE);
 
-        DrawRectangle (10, 10, 20, 40, GREEN);
-        DrawCircle (450, 450, 200, BLUE);
-        DrawLine (10, 10, 600, 600, RED);
-        
-        // Here goes all the Game Logic
+        ClearBackground(BLACK);  // Clear the screen with a white color
+        // TODO: Draw everything you want here
 
-        // teardown Canvas
+        DrawTextureEx(marioTexture, position, rotation, 0.5f, tint);
+
+
         EndDrawing();
+        //----------------------------------------------------------------------------------
     }
-    CloseWindow();
+
+    // De-Initialization
+    //--------------------------------------------------------------------------------------
+    CloseWindow();        // Close the window and OpenGL context
+    //--------------------------------------------------------------------------------------
+
     return 0;
 }
-
 
